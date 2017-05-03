@@ -48,7 +48,7 @@ public class HomeTextview extends TextView {
 			super.onFocusChanged(focused, direction, previouslyFocusedRect);
 		}
 	}
-	//hasWindowFocus : 当前窗口是否有当前的视图的焦点
+	//hasWindowFocus : 当 前窗口是否有当前的视图的焦点s
 	@Override
 	public void onWindowFocusChanged(boolean hasWindowFocus) {
 		if (hasWindowFocus) {
