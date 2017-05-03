@@ -9,7 +9,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/blue_bkg"
         >
-        <!-- layout_centerVertical : 垂直居中 -->
+        <!-- layout_centerVertical : 垂 直 居 中 ff -->
         <ImageView
             android:id="@+id/iv_home_logo"
             android:layout_width="wrap_content"
