@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android" 
+    android:shape="oval"
+    >
+    <!-- shape : 设置图片的形状    rectangle ： 矩形  oval：椭圆	line:线	ring：环形-->
+    <!-- corners : 弧度 -->
+    <corners android:radius="16dp"/>
+    <!--  size ： 设置图片的大小-->
+    <size android:width="32dp"
+        android:height="32dp"
+        />
+    <!-- solid : 颜色 -->
+	<solid android:color="#99ffffff"/>
+</shape>
