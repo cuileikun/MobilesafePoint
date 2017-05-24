@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="SettingView"> <!-- name : 给自定义属性设置标示 ,一般都是给设置设置，写谁的名称-->
+        <attr name="title" format="string" /> <!-- name:属性的名称    format:属性的类型 -->
+        
+         <attr name="setBackground">
+	        <enum name="first" value="0" />
+	        <enum name="middle" value="1" />
+	        <enum name="last" value="2" />
+    	 </attr>
+    	 <attr name="isToggle" format="boolean"/>
+    </declare-styleable>
+</resources>

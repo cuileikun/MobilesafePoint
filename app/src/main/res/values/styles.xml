@@ -8,4 +8,29 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <!-- activityTitleStyle
+     <TextView
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+     android:text="设置中心"
+     android:gravity="center"
+     android:textSize="20sp"
+     android:background="#429ED6"
+     android:textColor="@android:color/white"
+     android:paddingTop="10dp"
+     android:paddingBottom="10dp"
+     />
+  -->
+    <style name="activityTitle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:background">@color/activityTitleColor</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:paddingTop">10dp</item>
+        <item name="android:paddingBottom">10dp</item>
+    </style>
+
+
 </resources>

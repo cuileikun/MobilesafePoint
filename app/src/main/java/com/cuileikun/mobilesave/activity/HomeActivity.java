@@ -3,6 +3,7 @@ package com.cuileikun.mobilesave.activity;
 import android.animation.ObjectAnimator;
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
@@ -75,9 +76,9 @@ public class HomeActivity extends Activity implements AdapterView.OnItemClickLis
 			@Override
 			public void onClick(View v) {
 				// 跳转到设置中心界面
-//				Intent intent = new Intent(HomeActivity.this,
-//						SettingActivity.class);
-//				startActivity(intent);
+				Intent intent = new Intent(HomeActivity.this,
+						SettingActivity.class);
+				startActivity(intent);
 			}
 		});
 		gv_home_gridview.setOnItemClickListener(HomeActivity.this);

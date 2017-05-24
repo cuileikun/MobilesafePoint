@@ -18,6 +18,7 @@
 
 
         <activity android:name=".activity.HomeActivity"/>
+        <activity android:name=".activity.SettingActivity"/>
     </application>
 
 </manifest>

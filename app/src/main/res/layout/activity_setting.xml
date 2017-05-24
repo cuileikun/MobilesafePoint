@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:itheima="http://schemas.android.com/apk/res/com.cuileikun.mobilesave"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+    <!-- layout_gravity : 设置控件在父控件中的位置
+         layout_ ： 相对于父控件
+         gravity : 设置控件中的内容的位置
+     -->
+    <TextView 
+        style="@style/activityTitle"
+        android:text="设置中心"
+        />
+  	<com.cuileikun.mobilesave.view.SettingView
+  	    android:id="@+id/sv_setting_update"
+  	    android:layout_width="match_parent"
+  	    android:layout_height="wrap_content"
+  	    android:layout_marginTop="8dp"
+  	    itheima:title="设置自动更新"
+  	    itheima:setBackground="first"
+  	    ></com.cuileikun.mobilesave.view.SettingView>
+  	
+  	
+  	<com.cuileikun.mobilesave.view.SettingView
+  	    android:layout_width="match_parent"
+  	    android:layout_height="wrap_content"
+  	    itheima:title="设置骚扰拦截"
+  	    itheima:setBackground="last"
+  	    ></com.cuileikun.mobilesave.view.SettingView>
+  	
+  	
+  	<com.cuileikun.mobilesave.view.SettingView
+  	    android:layout_width="match_parent"
+  	    android:layout_height="wrap_content"
+  	    android:layout_marginTop="8dp"
+  	    itheima:title="归属地显示设置"
+  	    itheima:setBackground="first"
+  	    ></com.cuileikun.mobilesave.view.SettingView>
+  	
+  	
+  	<com.cuileikun.mobilesave.view.SettingView
+  	    android:layout_width="match_parent"
+  	    android:layout_height="wrap_content"
+  	    itheima:title="归属地风格设置"
+  	    itheima:setBackground="last"
+  	    itheima:isToggle="false"
+  	    ></com.cuileikun.mobilesave.view.SettingView>
+  	
+  	
+</LinearLayout>
