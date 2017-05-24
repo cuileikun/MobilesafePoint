@@ -12,6 +12,7 @@ import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.cuileikun.mobilesave.R;
 import com.cuileikun.mobilesave.bean.HomeGridviewItemBeanInfo;
@@ -152,7 +153,7 @@ public class HomeActivity extends Activity implements AdapterView.OnItemClickLis
 		// 参数2：执行的操作
 		// 参数3：一组动画执行的值
 		ObjectAnimator objectAnimator = ObjectAnimator.ofFloat(iv_home_logo,
-				"RotationY", 0f, 90f, 270f, 360f);
+				"RotationX", 0f, 90f, 270f, 360f);
 		// 动画的持续时间
 		objectAnimator.setDuration(2000);
 		// 执行的次数吗，INFINITE ：代表一直执行
@@ -173,8 +174,62 @@ public class HomeActivity extends Activity implements AdapterView.OnItemClickLis
 
 
 	@Override
-	public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-
+	public void onItemClick(AdapterView<?> parent, View view, int position,
+							long id) {
+		switch (position) {
+			case 0:
+//				//手机防盗
+//				//根据是否保存密码显示设置密码还是输入密码
+//				//获取保存密码
+//				String psw = SharedPreferencesUtil.getString(HomeActivity.this, Contants.SETPASSWORD, "");
+//				if (TextUtils.isEmpty(psw)) {//null    ""
+//					showSetPassWordDialog();
+//				}else{
+//					showEnterPasswordDialog();
+//				}
+				Toast.makeText(HomeActivity.this,"点击了",Toast.LENGTH_SHORT).show();
+				break;
+			case 1:
+				Toast.makeText(HomeActivity.this,"点击了",Toast.LENGTH_SHORT).show();
+				//骚扰拦截
+//				Intent intent = new Intent(HomeActivity.this,CallSMSSafeActivity.class);
+//				startActivity(intent);
+				break;
+			case 2:
+				Toast.makeText(HomeActivity.this,"点击了",Toast.LENGTH_SHORT).show();
+				//软件管家
+//				Intent intent2 = new Intent(HomeActivity.this,AppManagerActivity.class);
+//				startActivity(intent2);
+				break;
+			case 3:
+				Toast.makeText(HomeActivity.this,"点击了",Toast.LENGTH_SHORT).show();
+				//进程管理
+//				Intent intent3 = new Intent(HomeActivity.this,ProcessManagerActivity.class);
+//				startActivity(intent3);
+				break;
+			case 4:
+				//流量统计
+//				Intent intent4 = new Intent(HomeActivity.this,TrafficManagerActivity.class);
+//				startActivity(intent4);
+				break;
+			case 5:
+				Toast.makeText(HomeActivity.this,"点击了",Toast.LENGTH_SHORT).show();
+				//手机杀毒
+//				Intent intent5 = new Intent(HomeActivity.this,AntivirusActivity.class);
+//				startActivity(intent5);
+				break;
+			case 6:
+				Toast.makeText(HomeActivity.this,"点击了",Toast.LENGTH_SHORT).show();
+				//缓存清理
+//				Intent intent6 = new Intent(HomeActivity.this,ClearCacheActivity.class);
+//				startActivity(intent6);
+				break;
+			case 7://常用工具
+				Toast.makeText(HomeActivity.this,"点击了",Toast.LENGTH_SHORT).show();
+//				Intent intent7 = new Intent(HomeActivity.this,CommonToolsActivity.class);
+//				startActivity(intent7);
+				break;
+		}
 	}
 }
 

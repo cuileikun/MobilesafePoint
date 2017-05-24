@@ -2,38 +2,36 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
+    android:orientation="vertical"
+    android:background="#666666">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/blue_bkg"
-        >
+        android:background="@drawable/blue_bkg">
         <!-- layout_centerVertical : 垂 直 居 中 ff -->
         <ImageView
             android:id="@+id/iv_home_logo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/heima"
             android:layout_marginLeft="15dp"
-            />
+            android:src="@drawable/heima" />
         <!-- orientation : 排列方式
         	layout_toRightOf :　在那个控件的右边
         -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_toRightOf="@+id/iv_home_logo"
-            android:layout_marginTop="35dp"
             android:layout_marginLeft="8dp"
-            >
+            android:layout_marginTop="35dp"
+            android:layout_toRightOf="@+id/iv_home_logo"
+            android:orientation="vertical">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="安全卫士"
-                android:textSize="20sp"
-                />
+                android:text="孟浩然: 《春晓》"
+                android:textSize="20sp" />
             <!-- singleLine:单行显示
             	 ellipsize
             	 		none ： 省略后面的文字
@@ -49,11 +47,10 @@
             <com.cuileikun.mobilesave.view.HomeTextview
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="安全卫士,64核杀毒引擎,超神速度,打开7次可以召唤神龙,辅助杀毒......."
-                android:textSize="15sp"
-                android:textColor="#ff0000"
                 android:layout_marginTop="10dp"
-                />
+                android:text="春眠不觉晓,处处闻啼鸟春眠不觉晓,处处闻啼鸟春眠不觉晓,处处闻啼鸟......."
+                android:textColor="#ff0000"
+                android:textSize="15sp" />
         </LinearLayout>
         <!-- scaleType : 设置图片显示的方式
              clickable : 是否可以点击，true:可以，false:不可以
@@ -62,13 +59,12 @@
             android:id="@+id/iv_home_setting"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/setting"
             android:layout_alignParentRight="true"
             android:layout_margin="4dp"
-            android:scaleType="center"
             android:background="@drawable/home_setting_selector"
             android:clickable="true"
-            />
+            android:scaleType="center"
+            android:src="@drawable/setting" />
     </RelativeLayout>
 
 
@@ -82,25 +78,9 @@
         android:id="@+id/gv_home_gridview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:numColumns="2"
-        android:verticalSpacing="5dp"
         android:horizontalSpacing="5dp"
-        ></GridView>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        android:numColumns="2"
+        android:verticalSpacing="5dp"></GridView>
 
 
 </LinearLayout>
