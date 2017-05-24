@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <!--
+         layout_gravity : 设置控件在父控件中的位置
+         layout_ ： 相对于父控件
+         gravity : 设置控件中的内容的位置
+    -->
+    <!-- 要想修改样式文件中的属性的值,直接在控件中使用相同的属性设置值,会把样式文件中的属性的值覆盖 -->
+
+    <TextView
+        style="@style/setuptitlestyle"
+        android:layout_width="match_parent"
+        android:text="1.欢迎使用手机防盗" />
+
+    <TextView
+        style="@style/setupContentTitileStyle"
+        android:text="您的手机防盗卫士:" />
+
+    <TextView
+        style="@style/setupContentItemStyle"
+        android:text="SIM卡变更报警" />
+
+    <TextView
+        style="@style/setupContentItemStyle"
+        android:text="GPS追踪" />
+
+    <TextView
+        style="@style/setupContentItemStyle"
+        android:text="远程锁屏" />
+
+    <TextView
+        style="@style/setupContentItemStyle"
+        android:text="远程销毁数据" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:src="@drawable/step_1" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="15dp"
+            >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@android:drawable/presence_online" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@android:drawable/presence_invisible" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@android:drawable/presence_invisible" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@android:drawable/presence_invisible" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@android:drawable/presence_invisible" />
+        </LinearLayout>
+
+
+        <Button
+            style="@style/next"
+            />
+
+    </RelativeLayout>
+
+</LinearLayout>

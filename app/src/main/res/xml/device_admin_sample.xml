@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<device-admin xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- 定义超级管理员要执行功能 -->
+  <uses-policies>
+    <limit-password />
+    <watch-login />
+    <reset-password />
+    <force-lock />
+    <wipe-data />
+    <expire-password />
+    <encrypted-storage />
+    <disable-camera />
+  </uses-policies>
+</device-admin>

@@ -4,4 +4,6 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="activityTitleColor">#429ED6</color>
+    <color name="lostfindprotectedpresscolor">#99ffcc</color>
+    <color name="lostfindprotectednormalcolor">#ffffff</color>
 </resources>

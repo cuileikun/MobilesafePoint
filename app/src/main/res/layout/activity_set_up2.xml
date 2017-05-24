@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <!--
+         layout_gravity : 设置控件在父控件中的位置
+         layout_ ： 相对于父控件
+         gravity : 设置控件中的内容的位置
+    -->
+    <!-- 要想修改样式文件中的属性的值,直接在控件中使用相同的属性设置值,会把样式文件中的属性的值覆盖 -->
+
+    <TextView
+        style="@style/setuptitlestyle"
+        android:layout_width="match_parent"
+        android:text="2.手机卡绑定" />
+
+    <TextView
+        style="@style/setupContentTitileStyle"
+        android:text="通过绑定SIM卡:" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="下次重启手机发现SIM卡发生变化,就会发送报警短信"
+        android:textSize="18sp"
+        android:textColor="#aa000000"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        />
+
+    <RelativeLayout
+        android:id="@+id/rel_setup2_sim"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="点击绑定/解绑SIM卡"
+            android:textSize="18sp"
+            android:layout_centerVertical="true"
+            android:textColor="@android:color/white"
+            />
+        <ImageView
+            android:id="@+id/iv_setup2_islock"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/unlock"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:src="@drawable/step_2" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="15dp"
+            >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@android:drawable/presence_invisible" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@android:drawable/presence_online" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@android:drawable/presence_invisible" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@android:drawable/presence_invisible" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@android:drawable/presence_invisible" />
+        </LinearLayout>
+
+
+        <Button
+            style="@style/next"
+            />
+        <Button
+            style="@style/pre"
+            />
+
+    </RelativeLayout>
+
+</LinearLayout>

@@ -7,7 +7,50 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
+    <style name="setupContentItemStyle" parent="setupbasicStyle">
+        <item name="android:textSize">15sp</item>
+        <item name="android:drawableLeft">@drawable/dialog_title_default_icon</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:layout_marginLeft">15dp</item>
+        <item name="android:layout_marginTop">3dp</item>
+        <item name="android:drawablePadding">5dp</item>
+    </style>
+    <style name="setupbasicStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">#aa000000</item>
+    </style>
+    <style name="next">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:layout_alignParentBottom">true</item>
+        <item name="android:drawableRight">@drawable/next</item>
+        <item name="android:padding">8dp</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:onClick">next</item>
+        <item name="android:text">下一步</item>
+    </style>
+    <style name="setuptitlestyle" parent="activityTitle">
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:paddingLeft">5dp</item>
+    </style>
+    <style name="setupContentTitileStyle" parent="setupbasicStyle">
+        <item name="android:textSize">18sp</item>
+        <item name="android:padding">8dp</item>
 
+    </style>
+    <style name="pre">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_alignParentLeft">true</item>
+        <item name="android:layout_alignParentBottom">true</item>
+        <item name="android:drawableLeft">@drawable/pre</item>
+        <item name="android:padding">8dp</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:onClick">pre</item>
+        <item name="android:text">上一步</item>
+    </style>
     <!-- activityTitleStyle
      <TextView
      android:layout_width="match_parent"

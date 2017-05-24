@@ -18,6 +18,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.cuileikun.mobilesave.R;
+import com.cuileikun.mobilesave.activity.lostfind.LostFindActivity;
+import com.cuileikun.mobilesave.activity.lostfind.SetUp1Activity;
 import com.cuileikun.mobilesave.bean.HomeGridviewItemBeanInfo;
 import com.cuileikun.mobilesave.utils.Contants;
 import com.cuileikun.mobilesave.utils.SharedPreferencesUtil;
@@ -340,14 +342,15 @@ public class HomeActivity extends Activity implements AdapterView.OnItemClickLis
 		//如果设置过了,再次进入的时候就要跳转到手机防盗界面,进行防盗功能展示.
 
 		boolean isFirstEnter = SharedPreferencesUtil.getBoolean(this, Contants.ISFIRSTENTER, false);
+
 		if (isFirstEnter) {
 			//不是第一次,跳转到手机防盗页面
-////			Intent intent = new Intent(this,LostFindActivity.class);
-//			startActivity(intent);
+			Intent intent = new Intent(this,LostFindActivity.class);
+			startActivity(intent);
 		}else{
 			//是第一次,进入引导界面
-//			Intent intent = new Intent(this,SetUp1Activity.class);
-//			startActivity(intent);
+			Intent intent = new Intent(this,SetUp1Activity.class);
+			startActivity(intent);
 		}
 	}
 

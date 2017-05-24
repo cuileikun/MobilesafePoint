@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">MobileSave</string>
+    <string name="app_name1">我的超级管理员</string>
+    <string name="app_name2">超级管理员</string>
 </resources>
