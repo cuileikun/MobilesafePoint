@@ -63,7 +63,8 @@
         </receiver>
 
         <activity android:name=".activity.callsmssafe.CallSMSSafeActivity" />
-        <activity android:name=".activity.callsmssafe.BlackNumberAddAndEditActivity"></activity>
+        <activity android:name=".activity.callsmssafe.BlackNumberAddAndEditActivity" />
+        <activity android:name=".activity.appmanager.AppManagerActivity"></activity>
     </application>
 
 </manifest>

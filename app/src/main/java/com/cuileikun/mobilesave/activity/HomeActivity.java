@@ -18,6 +18,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.cuileikun.mobilesave.R;
+import com.cuileikun.mobilesave.activity.appmanager.AppManagerActivity;
 import com.cuileikun.mobilesave.activity.callsmssafe.CallSMSSafeActivity;
 import com.cuileikun.mobilesave.activity.lostfind.LostFindActivity;
 import com.cuileikun.mobilesave.activity.lostfind.SetUp1Activity;
@@ -189,8 +190,8 @@ public class HomeActivity extends Activity implements AdapterView.OnItemClickLis
 				break;
 			case 2:
 				//软件管家
-//				Intent intent2 = new Intent(HomeActivity.this,AppManagerActivity.class);
-//				startActivity(intent2);
+				Intent intent2 = new Intent(HomeActivity.this,AppManagerActivity.class);
+				startActivity(intent2);
 				break;
 			case 3:
 				//进程管理
