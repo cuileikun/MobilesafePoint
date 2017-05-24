@@ -5,10 +5,13 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -16,6 +19,8 @@ import android.widget.Toast;
 
 import com.cuileikun.mobilesave.R;
 import com.cuileikun.mobilesave.bean.HomeGridviewItemBeanInfo;
+import com.cuileikun.mobilesave.utils.Contants;
+import com.cuileikun.mobilesave.utils.SharedPreferencesUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -47,14 +52,7 @@ public class HomeActivity extends Activity implements AdapterView.OnItemClickLis
 	}
 
 	/**
-	 *
 	 * Description:初始化控件
-	 *
-	 * @author Administrator
-	 *
-	 * @date 2015-11-28
-	 *
-	 * @date 上午9:19:17
 	 */
 	private void initView() {
 		iv_home_logo = (ImageView) findViewById(R.id.iv_home_logo);
@@ -139,14 +137,7 @@ public class HomeActivity extends Activity implements AdapterView.OnItemClickLis
 
 
 	/**
-	 *
 	 * Description: logo属性动画的实现
-	 *
-	 * @author Administrator
-	 *
-	 * @date 2015-11-28
-	 *
-	 * @date 上午9:20:02
 	 */
 	private void setAnimation() {
 		// 参数1：执行属性动画的控件
@@ -178,31 +169,27 @@ public class HomeActivity extends Activity implements AdapterView.OnItemClickLis
 							long id) {
 		switch (position) {
 			case 0:
-//				//手机防盗
-//				//根据是否保存密码显示设置密码还是输入密码
-//				//获取保存密码
-//				String psw = SharedPreferencesUtil.getString(HomeActivity.this, Contants.SETPASSWORD, "");
-//				if (TextUtils.isEmpty(psw)) {//null    ""
-//					showSetPassWordDialog();
-//				}else{
-//					showEnterPasswordDialog();
-//				}
-				Toast.makeText(HomeActivity.this,"点击了",Toast.LENGTH_SHORT).show();
+				//手机防盗
+				//根据是否保存密码显示设置密码还是输入密码
+				//获取保存密码
+				String psw = SharedPreferencesUtil.getString(HomeActivity.this, Contants.SETPASSWORD, "");
+				if (TextUtils.isEmpty(psw)) {//null    ""
+					showSetPassWordDialog();
+				}else{
+					showEnterPasswordDialog();
+				}
 				break;
 			case 1:
-				Toast.makeText(HomeActivity.this,"点击了",Toast.LENGTH_SHORT).show();
 				//骚扰拦截
 //				Intent intent = new Intent(HomeActivity.this,CallSMSSafeActivity.class);
 //				startActivity(intent);
 				break;
 			case 2:
-				Toast.makeText(HomeActivity.this,"点击了",Toast.LENGTH_SHORT).show();
 				//软件管家
 //				Intent intent2 = new Intent(HomeActivity.this,AppManagerActivity.class);
 //				startActivity(intent2);
 				break;
 			case 3:
-				Toast.makeText(HomeActivity.this,"点击了",Toast.LENGTH_SHORT).show();
 				//进程管理
 //				Intent intent3 = new Intent(HomeActivity.this,ProcessManagerActivity.class);
 //				startActivity(intent3);
@@ -213,23 +200,156 @@ public class HomeActivity extends Activity implements AdapterView.OnItemClickLis
 //				startActivity(intent4);
 				break;
 			case 5:
-				Toast.makeText(HomeActivity.this,"点击了",Toast.LENGTH_SHORT).show();
 				//手机杀毒
 //				Intent intent5 = new Intent(HomeActivity.this,AntivirusActivity.class);
 //				startActivity(intent5);
 				break;
 			case 6:
-				Toast.makeText(HomeActivity.this,"点击了",Toast.LENGTH_SHORT).show();
 				//缓存清理
 //				Intent intent6 = new Intent(HomeActivity.this,ClearCacheActivity.class);
 //				startActivity(intent6);
 				break;
 			case 7://常用工具
-				Toast.makeText(HomeActivity.this,"点击了",Toast.LENGTH_SHORT).show();
 //				Intent intent7 = new Intent(HomeActivity.this,CommonToolsActivity.class);
 //				startActivity(intent7);
 				break;
 		}
 	}
+
+	/**
+	 * Description:输入密码对话框
+	 */
+	private void showEnterPasswordDialog() {
+		//复制步骤一
+		AlertDialog.Builder builder = new AlertDialog.Builder(this);
+		//将布局文件转化成view对象
+		View view = View.inflate(this, R.layout.dialog_enterpassword, null);
+
+		//复制步骤三
+		//初始化控件
+		final EditText et_setpassword_psw = (EditText) view.findViewById(R.id.et_setpassword_psw);
+		Button btn_ok = (Button) view.findViewById(R.id.btn_ok);
+		Button btn_cancel = (Button) view.findViewById(R.id.btn_cancel);
+
+		//复制步骤四
+		btn_ok.setOnClickListener(new View.OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				//1.获取输入的密码
+				String psw = et_setpassword_psw.getText().toString().trim();
+				//2.判断密码是否为空
+				if (TextUtils.isEmpty(psw)) {
+					Toast.makeText(HomeActivity.this, "密码不能为空", Toast.LENGTH_SHORT).show();
+					return;
+				}
+				//3.获取保存的密码
+				String sp_psw = SharedPreferencesUtil.getString(HomeActivity.this, Contants.SETPASSWORD, "");
+				//4.判断输入的密码和保存的密码是否一致,一致,跳转到手机防盗页面,不一致,提醒用户密码错误
+				if (psw.equals(sp_psw)) {
+					//跳转到手机防盗页面
+					Toast.makeText(HomeActivity.this, "密码正确", Toast.LENGTH_SHORT).show();
+					//隐藏dialog
+					dialog.dismiss();
+					//跳转到手机防盗页面
+					enterLostFind();
+				}else{
+					//提醒用户
+					Toast.makeText(HomeActivity.this, "密码错误", Toast.LENGTH_SHORT).show();
+				}
+			}
+		});
+
+
+		btn_cancel.setOnClickListener(new View.OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				dialog.dismiss();
+			}
+		});
+
+		//复制步骤二
+		builder.setView(view);//添加view
+		//builder.show();
+		dialog = builder.create();
+		dialog.show();
+	}
+	private void showSetPassWordDialog() {
+		AlertDialog.Builder builder = new AlertDialog.Builder(this);
+		//将布局文件转化成view对象
+		View view = View.inflate(this, R.layout.dialog_setpassword, null);
+		//初始化控件
+		final EditText et_setpassword_psw = (EditText) view.findViewById(R.id.et_setpassword_psw);
+		final EditText et_setpassword_confirm = (EditText) view.findViewById(R.id.et_setpassword_confirm);
+		Button btn_ok = (Button) view.findViewById(R.id.btn_ok);
+		Button btn_cancel = (Button) view.findViewById(R.id.btn_cancel);
+
+		btn_ok.setOnClickListener(new View.OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				//1.获取输入的密码
+				String psw = et_setpassword_psw.getText().toString().trim();
+				//2.判断密码是否为空，为空提醒用户
+				if (TextUtils.isEmpty(psw)) {//null :没有内存    ""：有内存但是没有内容
+					Toast.makeText(getApplicationContext(), "密码不能为空", Toast.LENGTH_SHORT).show();
+					return;
+				}
+				//3.获取确认密码
+				String confrim_psw = et_setpassword_confirm.getText().toString().trim();
+				//4.判断两次密码是否一致，一致：保存密码，不一致：提醒用户，密码不一致
+				if (psw.equals(confrim_psw)) {
+					//保存密码
+					SharedPreferencesUtil.saveString(HomeActivity.this, Contants.SETPASSWORD, psw);
+					Toast.makeText(getApplicationContext(), "设置密码成功", Toast.LENGTH_SHORT).show();
+					//隐藏对话框
+					dialog.dismiss();
+				}else{
+					//不一致
+					Toast.makeText(getApplicationContext(), "两次密码不一致", Toast.LENGTH_SHORT).show();
+				}
+			}
+		});
+		btn_cancel.setOnClickListener(new View.OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				dialog.dismiss();
+			}
+		});
+
+		builder.setView(view);//添加view
+		//builder.show();
+		dialog = builder.create();
+		dialog.show();
+	}
+
+	/**
+	 *
+	 * Description:跳转手机防盗页面
+	 *
+	 * @author Administrator
+	 *
+	 * @date 2015-11-29
+	 *
+	 * @date 上午9:40:25
+	 */
+	protected void enterLostFind() {
+		//如果用户是第一次进入手机防盗模块,跳转到设置引导界面,进行手机防盗功能设置,
+		//如果设置过了,再次进入的时候就要跳转到手机防盗界面,进行防盗功能展示.
+
+		boolean isFirstEnter = SharedPreferencesUtil.getBoolean(this, Contants.ISFIRSTENTER, false);
+		if (isFirstEnter) {
+			//不是第一次,跳转到手机防盗页面
+////			Intent intent = new Intent(this,LostFindActivity.class);
+//			startActivity(intent);
+		}else{
+			//是第一次,进入引导界面
+//			Intent intent = new Intent(this,SetUp1Activity.class);
+//			startActivity(intent);
+		}
+	}
+
 }
 
