@@ -46,7 +46,7 @@
         <activity android:name=".activity.lostfind.SetUp3Activity" />
         <activity android:name=".activity.lostfind.ContactsActivity" />
         <activity android:name=".activity.lostfind.SetUp4Activity" />
-        <activity android:name=".activity.lostfind.SetUp5Activity"></activity>
+        <activity android:name=".activity.lostfind.SetUp5Activity" />
 
         <receiver
             android:name=".receiver.Admin"
@@ -61,6 +61,9 @@
                 <action android:name="android.app.action.DEVICE_ADMIN_ENABLED" />
             </intent-filter>
         </receiver>
+
+        <activity android:name=".activity.callsmssafe.CallSMSSafeActivity" />
+        <activity android:name=".activity.callsmssafe.BlackNumberAddAndEditActivity"></activity>
     </application>
 
 </manifest>

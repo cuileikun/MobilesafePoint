@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <!--
+         layout_gravity : 设置控件在父控件中的位置
+         layout_ ： 相对于父控件
+         gravity : 设置控件中的内容的位置
+    -->
+
+    <TextView
+        android:id="@+id/tv_blacknumaddandedit_title"
+        style="@style/activityTitle"
+        android:text="添加黑名单" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="电话号码"
+        android:textColor="#aa000000"
+        android:textSize="18sp" />
+
+    <EditText
+        android:id="@+id/et_blacknumberaddandedit_phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:hint="号码不能为空"
+        android:inputType="phone"
+        android:background="@drawable/blacknumberaddandedit_edit_selector"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="拦截类型"
+        android:textColor="#aa000000"
+        android:textSize="18sp" />
+
+    <RadioGroup
+        android:id="@+id/rg_blacknumberaddandedit_radiogroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        >
+        <!-- checked : 设置是否选中 -->
+        <RadioButton
+            android:id="@+id/rb_blacknumberaddandedit_call"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="电话" />
+
+        <RadioButton
+            android:id="@+id/rb_blacknumberaddandedit_sms"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="短信" />
+
+        <RadioButton
+            android:id="@+id/rb_blacknumberaddandedit_all"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="全部" />
+    </RadioGroup>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="10dp"
+            >
+            <Button
+                android:id="@+id/btn_blacknumberaddandedit_ok"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="保存"
+                android:layout_marginRight="5dp"
+                android:textColor="@android:color/white"
+                android:onClick="addORedit"
+                />
+            <Button
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="取消"
+                android:layout_marginLeft="5dp"
+                android:onClick="cancle"
+                />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</LinearLayout>

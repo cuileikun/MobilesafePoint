@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/blacknumberaddandedit_et_input_enable" 
+        android:state_focused="true"
+        android:state_enabled="true"
+        /> <!-- 获取焦点的图片  state_enabled : 可用的时候图片-->
+    <item android:drawable="@drawable/blacknumberaddandedit_et_input_disenable" /> <!-- default ： 默认显示的图片-->
+</selector>

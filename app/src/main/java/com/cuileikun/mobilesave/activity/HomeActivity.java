@@ -18,6 +18,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.cuileikun.mobilesave.R;
+import com.cuileikun.mobilesave.activity.callsmssafe.CallSMSSafeActivity;
 import com.cuileikun.mobilesave.activity.lostfind.LostFindActivity;
 import com.cuileikun.mobilesave.activity.lostfind.SetUp1Activity;
 import com.cuileikun.mobilesave.bean.HomeGridviewItemBeanInfo;
@@ -183,8 +184,8 @@ public class HomeActivity extends Activity implements AdapterView.OnItemClickLis
 				break;
 			case 1:
 				//骚扰拦截
-//				Intent intent = new Intent(HomeActivity.this,CallSMSSafeActivity.class);
-//				startActivity(intent);
+				Intent intent = new Intent(HomeActivity.this,CallSMSSafeActivity.class);
+				startActivity(intent);
 				break;
 			case 2:
 				//软件管家
