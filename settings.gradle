@@ -1,1 +1,3 @@
 include ':app', ':library'
+
+include ':circleProgress_lib'

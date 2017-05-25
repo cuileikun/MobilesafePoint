@@ -21,8 +21,9 @@
     <uses-permission android:name="android.permission.READ_SMS" />
     <uses-permission android:name="android.permission.WRITE_SMS" />
     <uses-permission android:name="android.permission.GET_TASKS" />
-    <uses-permission android:name="android.permission.GET_PACKAGE_SIZE" />
-    <uses-permission android:name="android.permission.CLEAR_APP_CACHE" />
+    <uses-permission android:name="android.permission.GET_PACKAGE_SIZE"/>
+    <uses-permission android:name="android.permission.CLEAR_APP_CACHE"/>
+
 
     <application
         android:allowBackup="true"
@@ -66,7 +67,11 @@
         <activity android:name=".activity.callsmssafe.BlackNumberAddAndEditActivity" />
         <activity android:name=".activity.appmanager.AppManagerActivity" />
         <activity android:name=".activity.processmanager.ProcessManagerActivity" />
-        <activity android:name=".activity.trafficmanager.TrafficManagerActivity"></activity>
+        <activity android:name=".activity.trafficmanager.TrafficManagerActivity" />
+        <activity android:name=".activity.antivirus.AntivirusActivity" />
+
+        <service android:name=".service.ProtectedService" />
+
     </application>
 
 </manifest>

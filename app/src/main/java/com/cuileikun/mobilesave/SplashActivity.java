@@ -5,29 +5,37 @@ import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.res.AssetManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
+import android.os.SystemClock;
 import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.cuileikun.mobilesave.activity.HomeActivity;
+import com.cuileikun.mobilesave.service.ProtectedService;
 import com.cuileikun.mobilesave.utils.Contants;
 import com.cuileikun.mobilesave.utils.PackageUtil;
+import com.cuileikun.mobilesave.utils.Serviceutil;
 import com.cuileikun.mobilesave.utils.SharedPreferencesUtil;
 import com.lidroid.xutils.HttpUtils;
 import com.lidroid.xutils.exception.HttpException;
 import com.lidroid.xutils.http.ResponseInfo;
 import com.lidroid.xutils.http.callback.RequestCallBack;
 import com.lidroid.xutils.http.client.HttpRequest.HttpMethod;
+import com.lidroid.xutils.util.IOUtils;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
 
 public class SplashActivity extends Activity {
     private static final int INSTALL_REQUESTCODE = 100;
@@ -48,20 +56,23 @@ public class SplashActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
+        //拷贝数据库
+        copyDB("address.db");
+        copyDB("commonnum.db");
+        copyDB("antivirus.db");
+        //开启前台进程服务
+        if (!Serviceutil.isServiceRunning(this, "com.cuileikun.mobilesave.service.ProtectedService")) {
+            startService(new Intent(this,ProtectedService.class));
+        }
+        SystemClock.sleep(3000);
         initView();
     }
 
     /**
-     *
      * Description: 初始化控件
-     *
-     * @author Administrator
-     *
-     * @date 2015-11-25
-     *
-     * @date 上午10:45:02
      */
     private void initView() {
+
         splash_rl = (RelativeLayout) findViewById(R.id.splash_rl);
         splash_rl.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -94,17 +105,56 @@ public class SplashActivity extends Activity {
                 }
             }
         }, 2000);
-    }
 
+
+
+
+
+    }
     /**
      *
-     * Description:1.连接服务器,查看是否有最新版本
+     * Description:拷贝数据库
      *
      * @author Administrator
      *
-     * @date 2015-11-25
+     * @date 2015-12-4
      *
-     * @date 上午11:14:54
+     * @date 下午3:47:06
+     */
+    private void copyDB(String name) {
+        File file = new File(getFilesDir(), name);
+        //判断文件是否存在,存在不去拷贝
+        if (!file.exists()) {
+            //1.获取assets管理者
+            AssetManager assetManager = getAssets();
+            InputStream in= null;
+            FileOutputStream out = null;
+            try {
+                //2.读取数据库
+                in = assetManager.open(name);
+                //getCacheDir() : 获取缓存目录
+                //getFilesDir() : 获取文件的目录
+                out = new FileOutputStream(file);
+                //3.读写操作
+                byte[] b = new byte[1024];
+                int len = -1;
+                while((len = in.read(b)) != -1){
+                    out.write(b, 0, len);
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }finally{
+                //4.关流
+				/*in.close();
+				out.close();*/
+                //xutils中关流操作
+                IOUtils.closeQuietly(in);
+                IOUtils.closeQuietly(out);
+            }
+        }
+    }
+    /**
+     * Description:1.连接服务器,查看是否有最新版本
      */
     private void update() {
         //1.1连接服务器
@@ -158,14 +208,7 @@ public class SplashActivity extends Activity {
         });
     }
     /**
-     *
      * Description: 2.弹出对话框提示用户更新版本
-     *
-     * @author Administrator
-     *
-     * @date 2015-11-25
-     *
-     * @date 下午2:53:21
      */
     protected void showUpdateDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -213,14 +256,7 @@ public class SplashActivity extends Activity {
         //builder.create().show();
     }
     /**
-     *
      * Description:3.下载最新版本
-     *
-     * @author Administrator
-     *
-     * @date 2015-11-25
-     *
-     * @date 下午3:09:54
      */
     protected void downloadApk() {
 
@@ -276,14 +312,7 @@ public class SplashActivity extends Activity {
         }
     }
     /**
-     *
      * Description:4.安装最新版本
-     *
-     * @author Administrator
-     *
-     * @date 2015-11-25
-     *
-     * @date 下午3:48:50
      */
     protected void installerApk() {
         /**
@@ -311,14 +340,7 @@ public class SplashActivity extends Activity {
         super.onActivityResult(requestCode, resultCode, data);
     }
     /**
-     *
      * Description: 跳转到主界面操作
-     *
-     * @author Administrator
-     *
-     * @date 2015-11-25
-     *
-     * @date 下午2:44:07
      */
     protected void enterHome() {
         Intent intent = new Intent(this,HomeActivity.class);

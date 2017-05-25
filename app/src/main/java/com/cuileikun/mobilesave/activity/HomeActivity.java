@@ -18,6 +18,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.cuileikun.mobilesave.R;
+import com.cuileikun.mobilesave.activity.antivirus.AntivirusActivity;
 import com.cuileikun.mobilesave.activity.appmanager.AppManagerActivity;
 import com.cuileikun.mobilesave.activity.callsmssafe.CallSMSSafeActivity;
 import com.cuileikun.mobilesave.activity.lostfind.LostFindActivity;
@@ -207,8 +208,8 @@ public class HomeActivity extends Activity implements AdapterView.OnItemClickLis
 				break;
 			case 5:
 				//手机杀毒
-//				Intent intent5 = new Intent(HomeActivity.this,AntivirusActivity.class);
-//				startActivity(intent5);
+				Intent intent5 = new Intent(HomeActivity.this,AntivirusActivity.class);
+				startActivity(intent5);
 				break;
 			case 6:
 				//缓存清理

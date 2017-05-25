@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res/com.cuileikun.mobilesave"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <!-- layout_gravity : 设置控件在父控件中的位置
+         layout_ ： 相对于父控件
+         gravity : 设置控件中的内容的位置
+     -->
+    <TextView
+        style="@style/activityTitle"
+        android:text="手机杀毒"
+        />
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        >
+        <RelativeLayout
+            android:id="@+id/rel_antivirus_result"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:background="@color/activityTitleColor"
+            >
+            <TextView
+                android:id="@+id/tv_antivirus_antivirustext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="您的手很安全"
+                android:textSize="18sp"
+                android:textColor="@android:color/white"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="35dp"
+                />
+            <Button
+                android:id="@+id/btn_antivirus_scan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="重新扫描"
+                android:textSize="18sp"
+                android:padding="8dp"
+                android:textColor="@android:color/white"
+                android:layout_below="@+id/tv_antivirus_antivirustext"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"
+                />
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/rel_antivirus_acrprogress"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:background="@color/activityTitleColor"
+            >
+            <com.github.lzyzsd.circleprogress.ArcProgress
+                android:id="@+id/arc_progress"
+                android:background="@color/activityTitleColor"
+                android:layout_marginLeft="50dp"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                custom:arc_bottom_text="扫描中"
+                custom:arc_bottom_text_size="15sp"
+                custom:arc_text_color="#ffffff"
+                android:layout_centerHorizontal="true"
+                custom:arc_stroke_width="10dp"
+                />
+            <TextView
+                android:id="@+id/tv_antivirus_packagename"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="android.com.sms.phone"
+                android:textSize="18sp"
+                android:textColor="@android:color/white"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/arc_progress"
+                />
+        </RelativeLayout>
+        <LinearLayout
+            android:id="@+id/ll_antivirus_canvas"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            >
+            <ImageView
+                android:id="@+id/iv_antivirus_left"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="150dp"
+                />
+            <ImageView
+                android:id="@+id/iv_antivirus_right"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="150dp"
+                />
+        </LinearLayout>
+    </FrameLayout>
+    <ListView
+        android:id="@+id/lv_antivirus_applications"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        ></ListView>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</LinearLayout>
