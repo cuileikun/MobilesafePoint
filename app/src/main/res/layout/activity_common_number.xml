@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <!-- layout_gravity : 设置控件在父控件中的位置
+         layout_ ： 相对于父控件
+         gravity : 设置控件中的内容的位置
+     -->
+    <TextView
+        style="@style/activityTitle"
+        android:text="常用号码查询"
+        />
+    <!-- groupIndicator : 设置箭头的操作  @null:表示没有箭头 -->
+    <ExpandableListView
+        android:id="@+id/elv_commonnumber_commonnumbers"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:groupIndicator="@null"
+        ></ExpandableListView>
+
+</LinearLayout>

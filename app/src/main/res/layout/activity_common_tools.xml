@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:itheima="http://schemas.android.com/apk/res/com.cuileikun.mobilesave"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <!-- layout_gravity : 设置控件在父控件中的位置
+         layout_ ： 相对于父控件
+         gravity : 设置控件中的内容的位置
+     -->
+    <TextView
+        style="@style/activityTitle"
+        android:text="常用工具"
+        />
+
+    <com.cuileikun.mobilesave.view.SettingView
+        android:id="@+id/sv_commontools_address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        itheima:title="号码归属地查询"
+        itheima:setBackground="first"
+        itheima:isToggle="false"
+        ></com.cuileikun.mobilesave.view.SettingView>
+
+
+    <com.cuileikun.mobilesave.view.SettingView
+        android:id="@+id/sv_setting_callsmssafe"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        itheima:title="常用号码查询"
+        itheima:setBackground="last"
+        itheima:isToggle="false"
+        ></com.cuileikun.mobilesave.view.SettingView>
+
+
+    <com.cuileikun.mobilesave.view.SettingView
+        android:id="@+id/sv_commontool_sms"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        itheima:title="短信备份"
+        itheima:setBackground="first"
+        itheima:isToggle="false"
+        ></com.cuileikun.mobilesave.view.SettingView>
+
+
+    <com.cuileikun.mobilesave.view.SettingView
+        android:id="@+id/sv_commontools_writesms"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        itheima:title="短信还原"
+        itheima:setBackground="last"
+        itheima:isToggle="false"
+        ></com.cuileikun.mobilesave.view.SettingView>
+
+    <com.cuileikun.mobilesave.view.SettingView
+        android:id="@+id/sv_commontools_watchdog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        itheima:title="程序锁管理"
+        itheima:setBackground="first"
+        itheima:isToggle="false"
+        android:layout_marginTop="8dp"
+        ></com.cuileikun.mobilesave.view.SettingView>
+
+    <com.cuileikun.mobilesave.view.SettingView
+        android:id="@+id/sv_commontools_watchdog1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        itheima:title="开启电子狗服务1"
+        itheima:setBackground="middle"
+        ></com.cuileikun.mobilesave.view.SettingView>
+
+
+    <com.cuileikun.mobilesave.view.SettingView
+        android:id="@+id/sv_commontools_watchdog2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        itheima:title="开启电子狗服务2"
+        itheima:setBackground="last"
+        ></com.cuileikun.mobilesave.view.SettingView>
+
+
+</LinearLayout>

@@ -24,6 +24,10 @@
     <uses-permission android:name="android.permission.GET_PACKAGE_SIZE" />
     <uses-permission android:name="android.permission.CLEAR_APP_CACHE" />
 
+    <!-- To auto-complete the email text field in the login form with the user's emails -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.READ_PROFILE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -71,7 +75,21 @@
 
         <service android:name=".service.ProtectedService" />
 
-        <activity android:name=".activity.clearcache.ClearCacheActivity"></activity>
+        <activity android:name=".activity.clearcache.ClearCacheActivity" />
+        <activity
+            android:name=".CommonToolsActivity"
+            android:label="@string/title_activity_common_tools" />
+        <activity android:name=".activity.commontools.CommonToolsActivity" />
+        <activity android:name=".activity.commontools.AddressActivity" />
+        <activity android:name=".activity.commontools.CommonNumberActivity" />
+        <activity android:name=".activity.commontools.AppLockActivity" />
+
+        <service
+            android:name=".service.WatchDog1Service"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity android:name=".activity.commontools.WatchDogActivity"></activity>
     </application>
 
 </manifest>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <!-- layout_gravity : 设置控件在父控件中的位置
+         layout_ ： 相对于父控件
+         gravity : 设置控件中的内容的位置
+     -->
+    <TextView
+        style="@style/activityTitle"
+        android:text="号码归属地查询"
+        />
+    <EditText
+        android:id="@+id/et_address_phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="请输入要查询的号码"
+        android:layout_margin="8dp"
+        android:inputType="phone"
+        android:background="@drawable/blacknumberaddandedit_edit_selector"
+        />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="查询"
+        android:textColor="@android:color/white"
+        android:layout_margin="8dp"
+        android:onClick="address"
+        />
+    <TextView
+        android:id="@+id/tv_address_phoneaddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="归属地:"
+        android:textSize="18sp"
+        android:layout_margin="8dp"
+        android:textColor="#aa000000"
+        />
+
+
+
+
+
+
+
+
+
+
+
+</LinearLayout>

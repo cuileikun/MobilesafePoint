@@ -21,6 +21,7 @@ import com.cuileikun.mobilesave.R;
 import com.cuileikun.mobilesave.activity.antivirus.AntivirusActivity;
 import com.cuileikun.mobilesave.activity.appmanager.AppManagerActivity;
 import com.cuileikun.mobilesave.activity.callsmssafe.CallSMSSafeActivity;
+import com.cuileikun.mobilesave.activity.commontools.CommonToolsActivity;
 import com.cuileikun.mobilesave.activity.lostfind.LostFindActivity;
 import com.cuileikun.mobilesave.activity.lostfind.SetUp1Activity;
 import com.cuileikun.mobilesave.activity.processmanager.ProcessManagerActivity;
@@ -217,8 +218,8 @@ public class HomeActivity extends Activity implements AdapterView.OnItemClickLis
 //				startActivity(intent6);
 				break;
 			case 7://常用工具
-//				Intent intent7 = new Intent(HomeActivity.this,CommonToolsActivity.class);
-//				startActivity(intent7);
+				Intent intent7 = new Intent(HomeActivity.this,CommonToolsActivity.class);
+				startActivity(intent7);
 				break;
 		}
 	}
