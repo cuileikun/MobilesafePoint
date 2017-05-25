@@ -64,7 +64,8 @@
 
         <activity android:name=".activity.callsmssafe.CallSMSSafeActivity" />
         <activity android:name=".activity.callsmssafe.BlackNumberAddAndEditActivity" />
-        <activity android:name=".activity.appmanager.AppManagerActivity"></activity>
+        <activity android:name=".activity.appmanager.AppManagerActivity" />
+        <activity android:name=".activity.processmanager.ProcessManagerActivity"></activity>
     </application>
 
 </manifest>

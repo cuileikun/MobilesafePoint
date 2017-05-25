@@ -22,6 +22,7 @@ import com.cuileikun.mobilesave.activity.appmanager.AppManagerActivity;
 import com.cuileikun.mobilesave.activity.callsmssafe.CallSMSSafeActivity;
 import com.cuileikun.mobilesave.activity.lostfind.LostFindActivity;
 import com.cuileikun.mobilesave.activity.lostfind.SetUp1Activity;
+import com.cuileikun.mobilesave.activity.processmanager.ProcessManagerActivity;
 import com.cuileikun.mobilesave.bean.HomeGridviewItemBeanInfo;
 import com.cuileikun.mobilesave.utils.Contants;
 import com.cuileikun.mobilesave.utils.SharedPreferencesUtil;
@@ -195,8 +196,8 @@ public class HomeActivity extends Activity implements AdapterView.OnItemClickLis
 				break;
 			case 3:
 				//进程管理
-//				Intent intent3 = new Intent(HomeActivity.this,ProcessManagerActivity.class);
-//				startActivity(intent3);
+				Intent intent3 = new Intent(HomeActivity.this,ProcessManagerActivity.class);
+				startActivity(intent3);
 				break;
 			case 4:
 				//流量统计
