@@ -64,7 +64,6 @@ public class SplashActivity extends Activity {
         if (!Serviceutil.isServiceRunning(this, "com.cuileikun.mobilesave.service.ProtectedService")) {
             startService(new Intent(this,ProtectedService.class));
         }
-        SystemClock.sleep(3000);
         initView();
     }
 

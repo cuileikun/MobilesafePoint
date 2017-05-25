@@ -21,9 +21,8 @@
     <uses-permission android:name="android.permission.READ_SMS" />
     <uses-permission android:name="android.permission.WRITE_SMS" />
     <uses-permission android:name="android.permission.GET_TASKS" />
-    <uses-permission android:name="android.permission.GET_PACKAGE_SIZE"/>
-    <uses-permission android:name="android.permission.CLEAR_APP_CACHE"/>
-
+    <uses-permission android:name="android.permission.GET_PACKAGE_SIZE" />
+    <uses-permission android:name="android.permission.CLEAR_APP_CACHE" />
 
     <application
         android:allowBackup="true"
@@ -72,6 +71,7 @@
 
         <service android:name=".service.ProtectedService" />
 
+        <activity android:name=".activity.clearcache.ClearCacheActivity"></activity>
     </application>
 
 </manifest>
