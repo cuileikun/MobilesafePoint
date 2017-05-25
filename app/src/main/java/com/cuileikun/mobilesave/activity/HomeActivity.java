@@ -23,6 +23,7 @@ import com.cuileikun.mobilesave.activity.callsmssafe.CallSMSSafeActivity;
 import com.cuileikun.mobilesave.activity.lostfind.LostFindActivity;
 import com.cuileikun.mobilesave.activity.lostfind.SetUp1Activity;
 import com.cuileikun.mobilesave.activity.processmanager.ProcessManagerActivity;
+import com.cuileikun.mobilesave.activity.trafficmanager.TrafficManagerActivity;
 import com.cuileikun.mobilesave.bean.HomeGridviewItemBeanInfo;
 import com.cuileikun.mobilesave.utils.Contants;
 import com.cuileikun.mobilesave.utils.SharedPreferencesUtil;
@@ -201,8 +202,8 @@ public class HomeActivity extends Activity implements AdapterView.OnItemClickLis
 				break;
 			case 4:
 				//流量统计
-//				Intent intent4 = new Intent(HomeActivity.this,TrafficManagerActivity.class);
-//				startActivity(intent4);
+				Intent intent4 = new Intent(HomeActivity.this,TrafficManagerActivity.class);
+				startActivity(intent4);
 				break;
 			case 5:
 				//手机杀毒
