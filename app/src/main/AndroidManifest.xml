@@ -89,7 +89,8 @@
             android:enabled="true"
             android:exported="true" />
 
-        <activity android:name=".activity.commontools.WatchDogActivity"></activity>
+        <activity android:name=".activity.commontools.WatchDogActivity" />
+        <activity android:name=".objectanimator.ObjectAnimatorDemoActivity"></activity>
     </application>
 
 </manifest>

@@ -27,6 +27,7 @@ import com.cuileikun.mobilesave.activity.lostfind.SetUp1Activity;
 import com.cuileikun.mobilesave.activity.processmanager.ProcessManagerActivity;
 import com.cuileikun.mobilesave.activity.trafficmanager.TrafficManagerActivity;
 import com.cuileikun.mobilesave.bean.HomeGridviewItemBeanInfo;
+import com.cuileikun.mobilesave.objectanimator.ObjectAnimatorDemoActivity;
 import com.cuileikun.mobilesave.utils.Contants;
 import com.cuileikun.mobilesave.utils.SharedPreferencesUtil;
 
@@ -66,6 +67,12 @@ public class HomeActivity extends Activity implements AdapterView.OnItemClickLis
 		iv_home_logo = (ImageView) findViewById(R.id.iv_home_logo);
 		iv_home_setting = (ImageView) findViewById(R.id.iv_home_setting);
 		gv_home_gridview = (GridView) findViewById(R.id.gv_home_gridview);
+		iv_home_logo.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View view) {
+				startActivity(new Intent(HomeActivity.this,ObjectAnimatorDemoActivity.class));
+			}
+		});
 
 		setAnimation();
 		// 将数组的数据保存到集合中
@@ -151,8 +158,21 @@ public class HomeActivity extends Activity implements AdapterView.OnItemClickLis
 		// 参数1：执行属性动画的控件
 		// 参数2：执行的操作
 		// 参数3：一组动画执行的值
-		ObjectAnimator objectAnimator = ObjectAnimator.ofFloat(iv_home_logo,
-				"RotationX", 0f, 90f, 270f, 360f);
+//		ObjectAnimator objectAnimator = ObjectAnimator.ofFloat(iv_home_logo,
+//				"RotationX", 0f, 90f, 270f, 360f);
+//		// 动画的持续时间
+//		objectAnimator.setDuration(2000);
+//		// 执行的次数吗，INFINITE ：代表一直执行
+//		objectAnimator.setRepeatCount(ObjectAnimator.INFINITE);
+//		// 旋转的模式
+//		// REVERSE : 动画执行完成，逆向执行动画
+//		// RESTART : 每次都初始化执行动画
+//		objectAnimator.setRepeatMode(ObjectAnimator.RESTART);
+//		// 执行动画
+//		objectAnimator.start();
+
+		ObjectAnimator objectAnimator = ObjectAnimator.ofFloat(iv_home_logo, "translationY", 0, 20, -10,0);
+
 		// 动画的持续时间
 		objectAnimator.setDuration(2000);
 		// 执行的次数吗，INFINITE ：代表一直执行
@@ -163,6 +183,11 @@ public class HomeActivity extends Activity implements AdapterView.OnItemClickLis
 		objectAnimator.setRepeatMode(ObjectAnimator.RESTART);
 		// 执行动画
 		objectAnimator.start();
+
+
+
+
+
 	}
 
 
